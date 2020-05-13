@@ -9,7 +9,7 @@ $postRequest = array(
     'steamId' => $_POST['steamId']
 );
 
-$cURLConnection = curl_init('http://localhost:5000/getOwnedApps');
+$cURLConnection = curl_init('34.72.96.84/getOwnedApps');
 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
