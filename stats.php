@@ -11,7 +11,7 @@ $postRequest = array(
     'steamId' => $_POST['steamId']
 );
 
-$cURLConnection = curl_init('localhost:5000/addUser');
+$cURLConnection = curl_init('35.239.38.150/addUser');
 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
