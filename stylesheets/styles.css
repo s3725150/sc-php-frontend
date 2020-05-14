@@ -41,9 +41,23 @@ h1 {
     text-align: center;
   }
   
-  .button:hover {
+.button:hover {
     background-color: #c7d5e0;
     color: #171a21;
-  }
+}
 
-  
+ul {
+    position: fixed;
+    left: 0;
+    display:flex;
+    flex-wrap: wrap;
+    background: #2a475e;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display:inline-block;
+    overflow: visible;
+}

@@ -22,21 +22,21 @@ curl_close($cURLConnection);
 ?>
 
 <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Search for a game..">
-
-<ul id="gamesList">
-<?php
-//Sort through the data
-$parsed_json = json_decode($apiResponse, true);
-$parsed_json = $parsed_json['games'];
-foreach($parsed_json as $key => $value)
-{
-    echo '<li><a href="/chat.php?appId=' . $value['appid'] . '" onclick="post">';
-    echo '<img src="http://media.steampowered.com/steamcommunity/public/images/apps/' . $value['appid'] . '/' . $value['img_logo_url'] . '.jpg" alt="'.$value['name'].'">'; 
-    echo '</a></li>';
-}
-?>
-</ul>
-
+<div id = gamesContainer>
+  <ul id="gamesList">
+  <?php
+  //Sort through the data
+  $parsed_json = json_decode($apiResponse, true);
+  $parsed_json = $parsed_json['games'];
+  foreach($parsed_json as $key => $value)
+  {
+      echo '<li><a href="/chat.php?appId=' . $value['appid'] . '" onclick="post">';
+      echo '<img src="http://media.steampowered.com/steamcommunity/public/images/apps/' . $value['appid'] . '/' . $value['img_logo_url'] . '.jpg" alt="'.$value['name'].'">'; 
+      echo '</a></li>';
+  }
+  ?>
+  </ul>
+</div>
 </body>
 </html>
 
