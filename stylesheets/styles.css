@@ -53,10 +53,10 @@ ul {
     flex-wrap: wrap;
     background: #2a475e;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    padding: 1%;
 }
 
 li {
     display:inline-block;
+    margin: 1px;
 }
