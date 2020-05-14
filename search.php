@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
 <body>
+<h1> Steam Chat </h1>
 <?php
 echo $_POST['steamId'];
 
