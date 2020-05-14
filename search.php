@@ -13,7 +13,7 @@ $postRequest = array(
     'steamId' => $_POST['steamId']
 );
 
-$cURLConnection = curl_init('34.72.96.84/gameList');
+$cURLConnection = curl_init('35.239.38.150/gameList');
 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
