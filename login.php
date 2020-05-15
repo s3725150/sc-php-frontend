@@ -8,9 +8,11 @@ topNav('Steam Chat');
 </section>
 <div>
 <form class = steamIdForm action="/search.php" method="post">
-    <label for="steamId">Steam ID:</label><br>
-    http://steamcommunity.com/profiles/
-    <input type="text" id="steamId" name="steamId" required><br>
+    <div>
+      <label for="steamId">Steam ID:</label><br>
+      http://steamcommunity.com/profiles/
+      <input type="text" id="steamId" name="steamId" required><br>
+    </div>
     <input type="submit" class = "button" value="Chat About Games!">
     <input type="submit" class = "button"value="Wasted on Steam?" formaction="/stats.php">
   </form>

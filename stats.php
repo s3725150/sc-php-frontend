@@ -12,50 +12,70 @@ curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
 $apiResponse = curl_exec($cURLConnection);
 curl_close($cURLConnection);
-?>
 
-<section>
-<?php
-//Sort through the data
 $parsed_json = json_decode($apiResponse, true);
-echo '<div>';
-echo '<img style="display:inline-block;margin: 1px;" src='. $parsed_json['avatar'] . '>'; 
-echo '</div>';
-echo '<br>';
-echo $parsed_json['name'];
-echo '<br>';
-echo 'Playtime in hours: ';
-echo $parsed_json['playtime'];
-echo '<br>';
-echo 'Total Owned Games: ';
-echo $parsed_json['total'];
-echo '<br>';
-echo 'Unplayed Games (<10mins): ';
-echo $parsed_json['unplayed'];
-echo '<br>';
-echo 'Thats ';
-echo $parsed_json['unplayed_percent'];
-echo '% of your games that are practically unplayed!';
-echo '<br>';
-echo '<br>';
-echo 'These are you 10 most played games:';
-echo '<br>';
-echo '<br>';
-
-foreach($parsed_json['topPlayed'] as $value)
-{
-  echo $value['name'];
-  echo '   -   Playtime: ';
-  echo $value['playtime'];
-  echo '<br>';
-}
 ?>
+
+<section id = myStats>
 <div>
-<form class = steamIdForm action="/compare.php" method="post">
+<?php
+echo '<img style="display:inline-block;margin: 1px;" src='. $parsed_json['avatar'] . '><br>'; 
+echo $parsed_json['name'];
+?>
+</div>
+<div>
+<table>
+  <tr>
+      <td>Time Wasted</td>
+      <td>
+      <?php
+      echo $parsed_json['playtime'] . ' hours';
+      ?>
+      </td>
+  </tr>
+  <tr>
+      <td>Owned Games</td>
+      <td>
+      <?php
+      echo $parsed_json['total'] . ' games';
+      ?>
+      </td>
+  </tr>
+  <tr>
+      <td>Unplayed Games</td>
+      <td>
+      <?php
+      echo $parsed_json['unplayed'] . ' games';
+      ?>
+      </td>
+  </tr>
+</table>
+  <?php
+    echo $parsed_json['unplayed_percent'] . '% of your library is unplayed!';
+  ?>
+</div>
+
+<div>
+  Top 10 time wasters
+  <table>
     <?php
-      echo '<input type="hidden" id="steamId" name="steamId" value="' . $_POST['steamId'] . '" required><br>';
+      foreach($parsed_json['topPlayed'] as $value)
+      {
+        echo '<tr>';
+        echo '<td>' . $value['name'] . '</td>';
+        echo '<td>' . $value['playtime'] . ' hours</td>';
+        echo '</tr>';
+      }
     ?>
-    <input type="submit" class = "button" value="Compare with friends">
+  </table>
+</div>
+
+<div>
+  <form class = steamIdForm action="/compare.php" method="post">
+      <?php
+        echo '<input type="hidden" id="steamId" name="steamId" value="' . $_POST['steamId'] . '" required><br>';
+      ?>
+      <input type="submit" class = "button" value="Compare Stats">
   </form>
 </div>
 </section>

@@ -7,17 +7,20 @@ body {
     color: white;
     width: 100%;
     height: 100%;
+    position: relative;
     overflow: auto;
     margin: 0;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     font-family: 'Press Start 2P', cursive;
+    font-size: 1vmin;
 }
 section{
 	width: 80%;
     display: block;
-    margin: 2em auto;
+    margin: 2% auto;
+    overflow: visible;
 }
 footer{
     position: fixed;
@@ -71,7 +74,17 @@ header {
 /* Steam ID Login*/
 .steamIdForm {
     text-align: center;
-    margin: 2em 0;
+    margin-top: 2%;
+}
+.steamIdForm div {
+    margin: 0.5%;
+}
+.steamIdForm #steamId {
+    border: 2px solid green;
+    width: 10%;
+    height: 1vmin;
+    margin-left: -1%;
+    border-radius: 4px;
 }
 .steamIdForm .button {
     display: inline-block;
@@ -81,8 +94,8 @@ header {
     background-color: #2a475e;
     color: #66c0f4;
     font-family: 'Press Start 2P', cursive;
-    padding: 28px 56px;
-    font-size: 24px;
+    padding: 1.5vmin 2vmin;
+    font-size: 2vmin;
     cursor: pointer;
     text-align: center;
   }
@@ -110,4 +123,22 @@ header {
 #gamesContainer li {
     display:inline-block;
     margin: 1px;
+}
+
+
+
+#myStats div{
+    display: block;
+    position: relative;
+    font-size: 1vmin;
+    margin: 2% auto;
+}
+#myStats table{
+    width: 100%;
+}
+#myStats tr{
+    background-color: #2a475e;
+}
+#myStats td{
+    padding: 2px;
 }
