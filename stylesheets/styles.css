@@ -1,5 +1,6 @@
 @import 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap';
 
+/* General Styling */
 html,
 body {
     background:#1b2838;
@@ -13,21 +14,66 @@ body {
     flex-wrap: wrap;
     font-family: 'Press Start 2P', cursive;
 }
-
-h1 {
-    background-color: #171a21;
-    color: white;
-    margin-top: 0;
-    padding: 28px 56px;
+section{
+	width: 80%;
+    display: block;
+    margin: 2em auto;
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
+    background-color: #171a21;
 }
 
-#loginform {
+
+
+/* Main Navigation */
+header {
+	width: 100%;
+    height: 80px;
+	line-height: 80px;
+    background-color: #171a21;
+	overflow: hidden;
+}
+.main-nav {
+    width: 90%;
+	overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-nav a {
+    display: inline-block;
+    vertical-align: top;
+    height: 80px; 
+    color: white;
     text-align: center;
-    margin: auto 0;
+    padding-left: 15px;
+	padding-right: 15px;
+    text-decoration: none;
+    font-size: 30px;
+}
+/* Change the color of nav button on hover */
+.main-nav a:hover {
+    background-color: #c7d5e0;
+    color: #171a21;
+}
+/* Change the color of the clicked nav button */
+.main-nav a:active {
+    background-color: white;
+    color: black;
 }
 
-.button {
+
+
+/* Steam ID Login*/
+.steamIdForm {
+    text-align: center;
+    margin: 2em 0;
+}
+.steamIdForm .button {
     display: inline-block;
     margin: auto 0;
     width: 50%;
@@ -40,13 +86,19 @@ h1 {
     cursor: pointer;
     text-align: center;
   }
-  
-.button:hover {
+.steamIdForm .button:hover {
     background-color: #c7d5e0;
     color: #171a21;
 }
+.steamIdForm .button:active {
+    background-color: white;
+    color: black;
+}
 
-ul {
+
+
+/* List of Owned Games*/
+#gamesContainer ul {
     position: absolute;
     left: 0;
     display:flex;
@@ -55,8 +107,7 @@ ul {
     list-style-type: none;
     padding: 1%;
 }
-
-li {
+#gamesContainer li {
     display:inline-block;
     margin: 1px;
 }

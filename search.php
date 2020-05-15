@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="stylesheets/styles.css">
-</head>
-<body>
-<h1> Steam Chat </h1>
 <?php
+require_once("tools.php");
+topNav('Steam Chat - My Games');
+
 echo $_POST['steamId'];
 
 // Post to steam microservice and get list of games owned by user
@@ -40,8 +36,10 @@ curl_close($cURLConnection);
   ?>
   </ul>
 </div>
-</body>
-</html>
+
+<?php
+bottomFooter();
+?>
 
 <script>
 function searchGames() {

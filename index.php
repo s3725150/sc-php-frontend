@@ -17,6 +17,9 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
     case '/stats.php':
         require 'stats.php';
         break;
+    case '/compare.php':
+        require 'compare.php';
+        break;
     default:
         http_response_code(404);
         exit('Not Found');

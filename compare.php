@@ -1,7 +1,7 @@
 <?php
 require_once("tools.php");
-topNav('Steam Chat - Chat');
-echo $_GET['appId'];
+topNav('Steam Chat - Compare Stats');
+echo $_POST['steamId'];
 echo '  // ToDO';
 bottomFooter();
 ?>

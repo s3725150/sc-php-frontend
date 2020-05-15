@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="stylesheets/styles.css">
-</head>
-<body>
-<h1> Steam Chat </h1>
 <?php
+require_once("tools.php");
+topNav('Steam Chat - My Stats');
 
 $postRequest = array(
     'steamId' => $_POST['steamId']
@@ -17,8 +12,10 @@ curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
 $apiResponse = curl_exec($cURLConnection);
 curl_close($cURLConnection);
+?>
 
-
+<section>
+<?php
 //Sort through the data
 $parsed_json = json_decode($apiResponse, true);
 echo '<div>';
@@ -53,5 +50,16 @@ foreach($parsed_json['topPlayed'] as $value)
   echo '<br>';
 }
 ?>
-</body>
-</html>
+<div>
+<form class = steamIdForm action="/compare.php" method="post">
+    <?php
+      echo '<input type="hidden" id="steamId" name="steamId" value="' . $_POST['steamId'] . '" required><br>';
+    ?>
+    <input type="submit" class = "button" value="Compare with friends">
+  </form>
+</div>
+</section>
+
+<?php
+bottomFooter();
+?>
