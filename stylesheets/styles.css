@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1vmin;
+    font-size: 2vmin;
 }
 section{
 	width: 80%;
@@ -89,13 +89,13 @@ header {
 .steamIdForm .button {
     display: inline-block;
     margin: auto 0;
-    width: 50%;
+    width: 60%;
     border: none;
     background-color: #2a475e;
     color: #66c0f4;
     font-family: 'Press Start 2P', cursive;
     padding: 1.5vmin 2vmin;
-    font-size: 2vmin;
+    font-size: 4vmin;
     cursor: pointer;
     text-align: center;
   }
@@ -130,10 +130,10 @@ header {
 #myStats div{
     display: block;
     position: relative;
-    font-size: 1vmin;
     margin: 2% auto;
 }
 #myStats table{
+    font-size: 1.5vmin;
     width: 100%;
 }
 #myStats tr{
