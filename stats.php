@@ -19,7 +19,7 @@ $parsed_json = json_decode($apiResponse, true);
 <section id = myStats>
 <div>
 <?php
-echo '<img style="display:inline-block;margin: 1px;" src='. $parsed_json['avatar'] . '><br>'; 
+echo '<img style="display:inline-block;margin: 1px;" src='. $parsed_json['avatar_url'] . '><br>'; 
 echo $parsed_json['name'];
 ?>
 </div>
@@ -42,7 +42,7 @@ echo $parsed_json['name'];
       </td>
   </tr>
   <tr>
-      <td>Unplayed Games</td>
+      <td>Unplayed Games (less than 10mins played)</td>
       <td>
       <?php
       echo $parsed_json['unplayed'] . ' games';
@@ -59,7 +59,7 @@ echo $parsed_json['name'];
   Top 10 time wasters
   <table>
     <?php
-      foreach($parsed_json['topPlayed'] as $value)
+      foreach($parsed_json['top_played'] as $value)
       {
         echo '<tr>';
         echo '<td>' . $value['name'] . '</td>';

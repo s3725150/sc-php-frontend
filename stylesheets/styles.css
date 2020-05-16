@@ -10,9 +10,7 @@ body {
     position: relative;
     overflow: auto;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+
     font-family: 'Press Start 2P', cursive;
     font-size: 2vmin;
 }
