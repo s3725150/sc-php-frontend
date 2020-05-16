@@ -20,7 +20,7 @@ DOC;
 function bottomFooter(){
 echo <<<DOC
 <footer>
-    <div> Luke Shuster s3725150 & Craig Slack sXXXXXXX</div>
+    <div> Luke Shuster s3725150 & Craig Slack s3788151</div>
 </footer>
 </body>
 </html>
