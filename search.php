@@ -13,7 +13,7 @@ curl_close($cURLConnection);
 
 $parsed_json = json_decode($apiResponse, true);
 if($parsed_json == "error"){
-  header("Location: /login.php");
+  header("Location: /");
 }
 
 require_once("tools.php");
