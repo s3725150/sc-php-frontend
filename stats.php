@@ -1,11 +1,8 @@
 <?php
-require_once("tools.php");
-topNav('Steam Chat - My Stats');
-
+// Post to steam microservice and get user stats
 $postRequest = array(
-    'steamId' => $_POST['steamId']
+  'steamId' => $_POST['steamId']
 );
-
 $cURLConnection = curl_init('35.239.38.150/myStats');
 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
@@ -14,6 +11,12 @@ $apiResponse = curl_exec($cURLConnection);
 curl_close($cURLConnection);
 
 $parsed_json = json_decode($apiResponse, true);
+if($parsed_json == "error"){
+  header("Location: /login.php");
+}
+
+require_once("tools.php");
+topNav('Steam Chat - My Stats');
 ?>
 
 <section id = myStats>

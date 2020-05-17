@@ -1,12 +1,10 @@
 <?php
-require_once("tools.php");
-topNav('Steam Chat - Compare Stats');
-
+// Post to steam microservice and get global stats
 $postRequest = array(
     'steamId' => $_POST['steamId']
 );
 
-$cURLConnection = curl_init('localhost:5000/globalStats');
+$cURLConnection = curl_init('35.239.38.150/globalStats');
 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
@@ -14,6 +12,12 @@ $apiResponse = curl_exec($cURLConnection);
 curl_close($cURLConnection);
 
 $parsed_json = json_decode($apiResponse, true);
+if($parsed_json == "error"){
+    header("Location: /login.php");
+}
+
+require_once("tools.php");
+topNav('Steam Chat - Compare Stats');
 ?>
 <section id = globalStats>
     <table>

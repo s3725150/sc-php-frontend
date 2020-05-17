@@ -1,12 +1,7 @@
 <?php
-require_once("tools.php");
-topNav('Steam Chat - My Games');
-
-echo $_POST['steamId'];
-
 // Post to steam microservice and get list of games owned by user
 $postRequest = array(
-    'steamId' => $_POST['steamId']
+  'steamId' => $_POST['steamId']
 );
 
 $cURLConnection = curl_init('35.239.38.150/gameList');
@@ -15,6 +10,16 @@ curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
 $apiResponse = curl_exec($cURLConnection);
 curl_close($cURLConnection);
+
+$parsed_json = json_decode($apiResponse, true);
+if($parsed_json == "error"){
+  header("Location: /login.php");
+}
+
+require_once("tools.php");
+topNav('Steam Chat - My Games');
+
+echo $_POST['steamId'];
 ?>
 
 <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Search for a game..">
@@ -22,7 +27,6 @@ curl_close($cURLConnection);
   <ul id="gamesList">
   <?php
   //Sort through the data
-  $parsed_json = json_decode($apiResponse, true);
   $parsed_json = $parsed_json['games'];
   foreach($parsed_json as $key => $value)
   {
