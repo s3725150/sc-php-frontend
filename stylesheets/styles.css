@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap';
 @import 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap';
 
 /* General Styling */
@@ -11,7 +12,7 @@ body {
     overflow: auto;
     margin: 0;
 
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Orbitron', sans-serif;
     font-size: 2vmin;
 }
 section{
@@ -54,6 +55,8 @@ header {
     padding-left: 15px;
 	padding-right: 15px;
     text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2vmin;
     font-size: 30px;
 }
 /* Change the color of nav button on hover */
@@ -79,9 +82,11 @@ header {
 }
 .steamIdForm #steamId {
     border: 2px solid green;
-    width: 10%;
-    height: 1vmin;
-    margin-left: -1%;
+    padding: 1vmin;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2vmin;
+    width: 15%;
+    height: 1.5vmin;
     border-radius: 4px;
 }
 .steamIdForm .button {
@@ -91,8 +96,8 @@ header {
     border: none;
     background-color: #2a475e;
     color: #66c0f4;
-    font-family: 'Press Start 2P', cursive;
     padding: 1.5vmin 2vmin;
+    font-family: 'Orbitron', sans-serif;
     font-size: 4vmin;
     cursor: pointer;
     text-align: center;
@@ -107,6 +112,12 @@ header {
 }
 
 
+/* Most Popular Game*/
+#mostPopularGame {
+    width: 80%;
+    margin: auto;
+    font-size: 2.5vmin;
+}
 
 /* List of Owned Games*/
 #gamesContainer ul {
@@ -124,19 +135,34 @@ header {
 }
 
 
-
-#myStats div{
+/* My Stats Page*/
+#myStats div {
     display: block;
     position: relative;
     margin: 2% auto;
 }
-#myStats table{
+#myStats table {
     font-size: 1.5vmin;
     width: 100%;
 }
-#myStats tr{
+#myStats tr {
     background-color: #2a475e;
 }
-#myStats td{
+#myStats td {
     padding: 2px;
+}
+
+
+/* Global Stats Page*/
+.globalStats{
+    width: 60%;
+}
+.globalStats table {
+    width: 100%;
+}
+.globalStats table .cell {
+    width: 5vmin;
+    height: 5vmin;
+    margin: 0;
+    padding: 0;
 }
