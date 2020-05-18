@@ -75,7 +75,56 @@ topNav('Steam Chat - Compare Stats');
                     }
                 ?>
             </td>
-        </tr>    
+        </tr>
+        <tr>
+            <td>
+                owned games rank
+            </td>
+            <td>
+                total hours rank
+            </td>
+            <td>
+                total play percent rank
+            </td>
+        </tr> 
+        <tr>
+            <td>
+                <table><tr>
+                    <?php
+                        echo '<td><img style="display:inline-block;margin: 1px;" src='. $parsed_json['user_stats']['avatar_url'] . '></td>'; 
+                        echo '<td><table>';
+                        echo '<tr><td>' . $parsed_json['user_stats']['name'] . '</td></tr>';
+                        echo '<tr><td>Rank ' . $parsed_json['user_stats']['game_count_rank'][0]['rank'] . '</td></tr>';
+                        echo '<tr><td>' . $parsed_json['user_stats']['game_count_rank'][0]['game_count'] . ' games owned</td></tr>';
+                        echo '</table></td>';
+                    ?>
+                </tr></table>
+            </td>
+            <td>
+                <table><tr>
+                    <?php
+                        echo '<td><img style="display:inline-block;margin: 1px;" src='. $parsed_json['user_stats']['avatar_url'] . '></td>'; 
+                        echo '<td><table>';
+                        echo '<tr><td>' . $parsed_json['user_stats']['name'] . '</td></tr>';
+                        echo '<tr><td>Rank ' . $parsed_json['user_stats']['playtime_rank'][0]['rank'] . '</td></tr>';
+                        echo '<tr><td>' . $parsed_json['user_stats']['playtime_rank'][0]['playtime'] . ' hours</td></tr>';
+                        echo '</table></td>';
+                    ?>
+                </tr></table>
+            </td>
+            <td>
+                <table><tr>
+                    <?php
+                        echo '<td><img style="display:inline-block;margin: 1px;" src='. $parsed_json['user_stats']['avatar_url'] . '></td>'; 
+                        echo '<td><table>';
+                        echo '<tr><td>' . $parsed_json['user_stats']['name'] . '</td></tr>';
+                        echo '<tr><td>Rank ' . $parsed_json['user_stats']['play_percent_rank'][0]['rank'] . '</td></tr>';
+                        echo '<tr><td>' . $parsed_json['user_stats']['play_percent_rank'][0]['play_percent'] . '% played</td></tr>';
+                        echo '</table></td>';
+                    ?>
+                </tr></table>
+            </td>
+        </tr>   
     </table>
 </section>
 <?php
