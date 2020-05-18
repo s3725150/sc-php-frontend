@@ -1,5 +1,7 @@
 <?php
 // Post to steam microservice and get list of games owned by user
+session_start();
+$_SESSION['steamId'] = $_POST['steamId'];
 $postRequest = array(
   'steamId' => $_POST['steamId']
 );
@@ -32,8 +34,9 @@ echo $_POST['steamId'];
   {
     if($value['img_logo_url'] != '')
     {
+
       echo '<li><a href="/chat.php?appId=' . $value['appid'] . '" onclick="post">';
-      echo '<img src="http://media.steampowered.com/steamcommunity/public/images/apps/' . $value['appid'] . '/' . $value['img_logo_url'] . '.jpg" alt="'.$value['name'].'">'; 
+      echo '<img src="http://media.steampowered.com/steamcommunity/public/images/apps/' . $value['appid'] . '/' . $value['img_logo_url'] . '.jpg" alt="'.$value['name'].'">';
       echo '</a></li>';
     }
   }
