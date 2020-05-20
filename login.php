@@ -72,16 +72,6 @@ $parsed_json= json_decode($apiResponse, true);
   </div>
 </section>
 
-<section>
-<div>
-    <h4 style="margin: 5vmin 0 0 0;">
-      <?php
-        echo 'Total Users of Steam Chat:  ' . $parsed_json['total_users'];
-      ?>
-    </h4>
-  </div>
-</section>
-
 <?php
 bottomFooter();
 ?>
