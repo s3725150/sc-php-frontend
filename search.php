@@ -4,7 +4,7 @@ $postRequest = array(
   'steamId' => $_POST['steamId']
 );
 
-$cURLConnection = curl_init('35.239.38.150/gameList');
+$cURLConnection = curl_init('https://steamchat-ms.xyz/steam/game_list');
 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 

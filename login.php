@@ -3,13 +3,14 @@ require_once("tools.php");
 topNav('Steam Chat');
 
 $cURLConnection = curl_init();
-curl_setopt($cURLConnection, CURLOPT_URL, '35.239.38.150/popularGame');
+curl_setopt($cURLConnection, CURLOPT_URL, 'https://esp-service-uqd3mltkja-uc.a.run.app/get_popular_games');
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
 $apiResponse = curl_exec($cURLConnection);
 curl_close($cURLConnection);
 
 $parsed_json= json_decode($apiResponse, true);
+
 ?>
 
 <section>
@@ -44,24 +45,24 @@ $parsed_json= json_decode($apiResponse, true);
         <tr>
           <td>
             <?php
-              echo '<img src="' . $parsed_json['popular_game'][0]['img_logo_url'] . '" alt="' . $parsed_json['popular_game'][0]['name'] . '">';
+              echo '<img src="' . $parsed_json['popular_games'][0]['img_logo_url'] . '" alt="' . $parsed_json['popular_game'][0]['name'] . '">';
             ?>
           </td>
           <td>
             <table>
               <tr><td>
                 <?php
-                  echo $parsed_json['popular_game'][0]['name'];
+                  echo $parsed_json['popular_games'][0]['name'];
                 ?>
               </td></tr>
               <tr><td>
                 <?php
-                  echo floor($parsed_json['popular_game'][0]['count']/$parsed_json['total_users']*100) . '% of users own this game';
+                  echo floor($parsed_json['popular_games'][0]['count']/$parsed_json['total_users']*100) . '% of users own this game';
                 ?>
               </td></tr>
               <tr><td>
                 <?php
-                  echo $parsed_json['popular_game'][0]['playtime'] . ' hours have been played across all users';
+                  echo $parsed_json['popular_games'][0]['playtime'] . ' hours have been played across all users';
                 ?>
               </td></tr>
             </table>
