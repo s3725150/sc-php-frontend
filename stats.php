@@ -3,7 +3,7 @@
 $postRequest = array(
   'steamId' => $_POST['steamId']
 );
-$cURLConnection = curl_init('https://steamchat-ms.xyz/steam/my_stats');
+$cURLConnection = curl_init('http://steamchat-ms.xyz/steam/my_stats');
 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
