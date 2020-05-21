@@ -5,11 +5,14 @@ topNav('Steam Chat');
 $cURLConnection = curl_init();
 curl_setopt($cURLConnection, CURLOPT_URL, 'https://esp-service-uqd3mltkja-uc.a.run.app/get_popular_games');
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
-
 $apiResponse = curl_exec($cURLConnection);
+curl_setopt($cURLConnection, CURLOPT_URL, 'https://esp-service-uqd3mltkja-uc.a.run.app/get_total_users');
+curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+$apiResponse2 = curl_exec($cURLConnection);
 curl_close($cURLConnection);
 
 $parsed_json= json_decode($apiResponse, true);
+$total_users= json_decode($apiResponse2, true);
 
 ?>
 
@@ -57,7 +60,7 @@ $parsed_json= json_decode($apiResponse, true);
               </td></tr>
               <tr><td>
                 <?php
-                  echo floor($parsed_json['popular_games'][0]['count']/$parsed_json['total_users']*100) . '% of users own this game';
+                  echo floor($parsed_json['popular_games'][0]['count']/$total_users['total_users']*100) . '% of users own this game';
                 ?>
               </td></tr>
               <tr><td>
