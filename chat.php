@@ -54,7 +54,7 @@ echo "Game Name=" . $_SESSION['gameName']. "</br>";
 // curl_close($messageCh);
 bottomFooter();
 ?>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 
 <script type='text/javascript'>
     <?php echo $_SESSION['steamId']?>;
