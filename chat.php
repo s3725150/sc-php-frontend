@@ -68,7 +68,7 @@ bottomFooter();
             e.stopImmediatePropagation();
             $.ajax({
                 headers: {'Access-Control-Allow-Origin' : '*'},
-                url: "http://localhost:5000/sendMessage",
+                url: "https://steamchat-ms.xyz/chat/sendMessage",
                 data: $('form').serialize(),
                 type : 'POST'
             })
@@ -76,7 +76,7 @@ bottomFooter();
         })
          $.ajax({
              headers: {'Access-Control-Allow-Origin' : '*'},
-             url: 'http://localhost:5000/add_chatRoom',
+             url: 'https://steamchat-ms.xyz/chat/add_chatRoom',
              data: $('form').serialize(),
              type: "POST",
              success: function (data){
@@ -97,7 +97,7 @@ bottomFooter();
                  window.setTimeout(function(){
                      $.ajax({
                          headers: {'Access-Control-Allow-Origin': '*'},
-                         url: 'http://localhost:5000/updateChat',
+                         url: 'https://steamchat-ms.xyz/chat/updateChat',
                          type: "POST",
                          success: function (data){
                              $.each(data, function(i, item){
