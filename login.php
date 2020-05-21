@@ -19,11 +19,8 @@ $total_users= json_decode($apiResponse2, true);
 <section>
   <h1>Welcome to Steam Chat</h1>
   <div>
-    <p>
-      Enter your steam ID below. You must have your profile and games set to public to use this app.
-      <br>
-      If you just want to demo it try using my steam ID: 76561198038149325
-    </p>
+    <p>Enter your steam ID below. You must have your profile and games set to public to use this app.
+    <br>If you just want to demo it try using my steam ID: 76561198038149325</p>
   </div>
 </section>
 
