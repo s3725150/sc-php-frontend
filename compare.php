@@ -4,7 +4,7 @@ $postRequest = array(
     'steamId' => $_POST['steamId']
 );
 
-$cURLConnection = curl_init('35.239.38.150/globalStats');
+$cURLConnection = curl_init('http://35.184.200.79/steam/global_stats');
 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
