@@ -3,7 +3,7 @@ runtime: php72
 handlers:
 # Serve a directory as a static resource.
 - url: /public/css
-  static_dir: css
+  static_dir: /public/css
 
 # Serve images as static resources.
 - url: /(.+\.(gif|png|jpg))$

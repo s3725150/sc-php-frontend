@@ -2,6 +2,10 @@
 require_once("tools.php");
 topNav('Steam Chat');
 
+session_start();
+$_SESSION = array();
+session_destroy();
+
 $cURLConnection = curl_init();
 curl_setopt($cURLConnection, CURLOPT_URL, 'https://steamchat-api-b3xftqio3a-uc.a.run.app/get_popular_games');
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);

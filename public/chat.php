@@ -52,8 +52,6 @@ bottomFooter();
 <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 
 <script type='text/javascript'>
-    <?php echo $_SESSION['steamId']?>;
-    <?php echo $_SESSION['appId']?>;
     var displayedMessages = [];
      $(document).on('ready', function(e) {
          e.preventDefault();
