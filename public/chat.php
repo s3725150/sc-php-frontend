@@ -118,7 +118,7 @@ bottomFooter();
     })
 
 function avatar_img(src) {
-    var avatar_img = IEWIN ? new Image() : document.createElement('avatar_img');
+    var avatar_img = new Image(1,1);
     avatar_img.src = src;
     return avatar_img;
 }
