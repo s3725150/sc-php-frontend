@@ -1,16 +1,30 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 session_start();
+// get user name and picture
+$postRequest = array(
+    'steamId' => $_SESSION['steamId']
+  );
+$cURLConnection = curl_init('https://steamchat-ms.xyz/steam/get_user_profile');
+curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $postRequest);
+curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+$apiResponse = curl_exec($cURLConnection);
+curl_close($cURLConnection);
+$parsed_json = json_decode($apiResponse, true);
+
 // Post to chat microservice and get chatRoom data
 $_SESSION['appId'] = $_GET['appId'];
 $_SESSION['gameName'] = $_GET['gameName'];
+$_SESSION['name'] = $parsed_json['players'][0]['personaname'];
+$_SESSION['avatar_url'] = $parsed_json['players'][0]['avatar'];
 
 // pull values and print to the top cause why not
 require_once("tools.php");
 topNav('Steam Chat - Chat');
 echo "App ID= " . $_GET['appId'] . "</br>";
 echo "Steam ID= " . $_SESSION['steamId'] . "</br>";
-echo "Game Name=" . $_SESSION['gameName']. "</br>";
+echo "Name= " . $_SESSION['name']  . "</br>";
+echo "Game Name= " . $_SESSION['gameName']. "</br>";
 
 ?>
 <section id="chatForm">
@@ -23,6 +37,8 @@ echo "Game Name=" . $_SESSION['gameName']. "</br>";
         <input type="text" name="message" placeholder="Enter Message">
         <input type="hidden" name="appId" value="<?php echo $_SESSION['appId']?>">
         <input type="hidden" name="steamId" value="<?php echo $_SESSION['steamId']?>">
+        <input type="hidden" name="name" value="<?php echo $_SESSION['name']?>">
+        <input type="hidden" name="avatar_url" value="<?php echo $_SESSION['avatar_url']?>">
         <button value="submit" type="submit">Send</button>
     </form>
 </section>
@@ -63,7 +79,8 @@ bottomFooter();
                      displayedMessages.push(item.timestamp)
                      var $tr = $('<tr>').append(
                          $('<td>').text(item.displayTime),
-                         $('<td>').text(item.steamId),
+                         $('<td>').text(item.name),
+                         $('<td>').text(item.avatar_url),
                          $('<td>').text(item.message)
                      ).appendTo('#chatMessage')
                  })
@@ -87,7 +104,8 @@ bottomFooter();
                                      displayedMessages.push(item.timestamp)
                                      var $tr = $('<tr>').append(
                                          $('<td>').text(item.displayTime),
-                                         $('<td>').text(item.steamId),
+                                         $('<td>').text(item.name),
+                                         $('<td>').text(item.avatar_url),
                                          $('<td>').text(item.message)
                                      ).appendTo('#chatMessage')
                                  }

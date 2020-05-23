@@ -4,7 +4,7 @@ echo <<<DOC
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="stylesheets/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <meta charset="utf-8">
   <title>$pageTitle</title>
 </head>
