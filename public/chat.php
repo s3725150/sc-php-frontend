@@ -18,7 +18,7 @@ echo "Game Name=" . $_SESSION['gameName']. "</br>";
         <table id="chatMessage">
         </table>
     </div>
-    <form id="sendForm" style="position: fixed; bottom: 10%; width: 100%">
+    <form id="sendForm" class="form-group" style="position: fixed; bottom: 10%; width: 100%">
         <input type="text" name="message" placeholder="Enter Message">
         <input type="hidden" name="appId" value="<?php echo $_SESSION['appId']?>">
         <input type="hidden" name="steamId" value="<?php echo $_SESSION['steamId']?>">
@@ -46,8 +46,7 @@ bottomFooter();
             e.stopImmediatePropagation();
             $.ajax({
                 headers: {'Access-Control-Allow-Origin' : '*'},
-                // url: "https://steamchat-ms.xyz/chat/sendMessage",
-                url: 'http://localhost:5000/chat/sendMessage',
+                url: "https://steamchat-ms.xyz/chat/sendMessage",
                 data: $('form').serialize(),
                 type : 'POST'
             })
@@ -55,8 +54,7 @@ bottomFooter();
         })
          $.ajax({
              headers: {'Access-Control-Allow-Origin' : '*'},
-             // url: 'https://steamchat-ms.xyz/chat/add_chatRoom',
-             url: 'http://localhost:5000/chat/add_chatRoom',
+             url: 'https://steamchat-ms.xyz/chat/add_chatRoom',
              data: $('form').serialize(),
              type: "POST",
              success: function (data){
@@ -79,8 +77,7 @@ bottomFooter();
                  if (isActive) {
                      $.ajax({
                          headers: {'Access-Control-Allow-Origin': '*'},
-                         // url: 'https://steamchat-ms.xyz/chat/updateChat',
-                         url: 'http://localhost:5000/chat/updateChat',
+                         url: 'https://steamchat-ms.xyz/chat/updateChat',
                          data: $("form").serialize(),
                          type: "POST",
                          success: function (data) {
