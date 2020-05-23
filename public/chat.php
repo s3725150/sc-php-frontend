@@ -77,7 +77,7 @@ bottomFooter();
                      displayedMessages.push(item.timestamp)
                      var $tr = $('<tr>').append(
                          $('<td>').text(item.displayTime),
-                         $('<td>').text(item.avatar_url),
+                         $('<td>').html('<img src="'+item.avatar_url+'">'),
                          $('<td>').text(item.name),
                          $('<td>').text(item.message)
                      ).appendTo('#chatMessage')
@@ -102,7 +102,7 @@ bottomFooter();
                                      displayedMessages.push(item.timestamp)
                                      var $tr = $('<tr>').append(
                                          $('<td>').text(item.displayTime),
-                                         $('<td>').text(avatar_img(item.avatar_url)),
+                                         $('<td>').html('<img src="'+item.avatar_url+'">'),
                                          $('<td>').text(item.name),
                                          $('<td>').text(item.message)
                                      ).appendTo('#chatMessage')
@@ -116,10 +116,4 @@ bottomFooter();
              }
          }
     })
-
-function avatar_img(src) {
-    var avatar_img = new Image(1,1);
-    avatar_img.src = src;
-    return avatar_img;
-}
 </script>
