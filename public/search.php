@@ -22,8 +22,6 @@ if($parsed_json == "error"){
 
 require_once("tools.php");
 topNav('Steam Chat - My Games');
-
-echo $_POST['steamId'];
 ?>
 
 <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Search for a game..">

@@ -138,25 +138,29 @@ header {
     background-color: #2a475e;
 }
 
-#myStats td {
-    padding: 2px;
-}
-
 #chatForm td:nth-child(1){
     width: 10%;
     font-size: 1.2vmin;
 }
 
 #chatForm td:nth-child(2){
-    width: 15%;
-    white-space: nowrap;
+    width: 5%;
+}
+#chatForm td:nth-child(2) img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 #chatForm td:nth-child(3){
+    width: 10%;
+}
+#chatForm td:nth-child(4){
     width: 75%;
 }
 
-#chatForm button {;
+#chatForm button {
     display: inline-block;
     margin: auto 0;
     width: 10%;
@@ -182,6 +186,18 @@ header {
 }
 
 /* List of Owned Games*/
+#searchInput {
+    display: block;
+    border: 2px solid green;
+    padding: 1vmin;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3vmin;
+    width: 95%;
+    height: 4vmin;
+    margin: 0.5% auto;
+    border-radius: 4px;
+    position: relative;
+}
 #gamesContainer ul {
     position: absolute;
     left: 0;
