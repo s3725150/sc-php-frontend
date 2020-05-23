@@ -37,7 +37,7 @@ echo $_POST['steamId'];
     if($value['img_logo_url'] != '')
     {
 
-      echo '<li><a href="/chat.php?appId=' . $value['appid'] . '?gameName=' .$value['name']. '" onclick="post">';
+      echo '<li><a href="/chat.php?appId=' . $value['appid'] . '&gameName=' .$value['name']. '" onclick="post">';
       echo '<img src="http://media.steampowered.com/steamcommunity/public/images/apps/' . $value['appid'] . '/' . $value['img_logo_url'] . '.jpg" alt="'.$value['name'].'">';
       echo '</a></li>';
     }
