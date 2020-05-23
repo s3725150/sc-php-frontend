@@ -3,6 +3,7 @@ header("Access-Control-Allow-Origin: *");
 session_start();
 // Post to chat microservice and get chatRoom data
 $_SESSION['appId'] = $_GET['appId'];
+$_SESSION['gameName'] = $_GET['gameName'];
 
 // pull values and print to the top cause why not
 require_once("tools.php");
