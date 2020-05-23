@@ -3,9 +3,8 @@ runtime: php72
 handlers:
 # Serve a directory as a static resource.
 - url: /css
-  static_dir: /css
+  static_dir: css
   
-# you missed this section. It allows all .css files inside stylesheets
 - url: /css/(.*\.(css)) 
   static_files: css/\1
   upload: css/(.*\.(css))
