@@ -111,6 +111,68 @@ header {
     color: black;
 }
 
+/*Chat page*/
+#chatForm div {
+    display: block;
+    position: relative;
+    margin: 2% auto;
+}
+
+#chatForm input {
+    display: inline-block;
+    border: 2px solid green;
+    padding: 1vmin;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2vmin;
+    width: 67%;
+    height: 4vmin;
+    border-radius: 4px;
+    position: relative;
+}
+#chatForm table {
+    font-size: 1.5vmin;
+    width: 100%;
+}
+
+#chatForm tr {
+    background-color: #2a475e;
+}
+
+#myStats td {
+    padding: 2px;
+}
+
+#chatForm td:nth-child(1){
+    width: 10%;
+    font-size: 1.2vmin;
+}
+
+#chatForm td:nth-child(2){
+    width: 15%;
+    white-space: nowrap;
+}
+
+#chatForm td:nth-child(3){
+    width: 75%;
+}
+
+#chatForm button {;
+    display: inline-block;
+    margin: auto 0;
+    width: 10%;
+    border: none;
+    background-color: #2a475e;
+    color: #66c0f4;
+    padding: 2vmin 2vmin;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+#chatForm button:hover {
+    background-color: #c7d5e0;
+    color: #171a21;
+}
 
 /* Most Popular Game*/
 #mostPopularGame {
