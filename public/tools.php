@@ -19,7 +19,7 @@ DOC;
 
 function bottomFooter(){
     $cURLConnection = curl_init();
-    curl_setopt($cURLConnection, CURLOPT_URL, 'https://esp-service-uqd3mltkja-uc.a.run.app/get_total_users');
+    curl_setopt($cURLConnection, CURLOPT_URL, 'https://steamchat-api-b3xftqio3a-uc.a.run.app/get_total_users');
     curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
     $apiRes = curl_exec($cURLConnection);

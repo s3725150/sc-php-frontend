@@ -3,10 +3,10 @@ require_once("tools.php");
 topNav('Steam Chat');
 
 $cURLConnection = curl_init();
-curl_setopt($cURLConnection, CURLOPT_URL, 'https://esp-service-uqd3mltkja-uc.a.run.app/get_popular_games');
+curl_setopt($cURLConnection, CURLOPT_URL, 'https://steamchat-api-b3xftqio3a-uc.a.run.app/get_popular_games');
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 $apiResponse = curl_exec($cURLConnection);
-curl_setopt($cURLConnection, CURLOPT_URL, 'https://esp-service-uqd3mltkja-uc.a.run.app/get_total_users');
+curl_setopt($cURLConnection, CURLOPT_URL, 'https://steamchat-api-b3xftqio3a-uc.a.run.app/get_total_users');
 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 $apiResponse2 = curl_exec($cURLConnection);
 curl_close($cURLConnection);
