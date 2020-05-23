@@ -40,7 +40,7 @@ echo "Game Name=" . $_SESSION['gameName']. "</br>";
         <table id="chatMessage">
         </table>
     </div>
-    <form id="sendForm" class=form-group" style="position: fixed; bottom: 10%; width: 100%">
+    <form id="sendForm" class="form-group" style="position: fixed; bottom: 10%; width: 100%">
         <input type="text" name="message" placeholder="Enter Message">
         <input type="hidden" name="appId" value="<?php echo $_SESSION['appId']?>">
         <input type="hidden" name="steamId" value="<?php echo $_SESSION['steamId']?>">
